@@ -1,0 +1,932 @@
+/*
+ * Custom CSS for Stan The Handyman Hero Section
+ */
+
+/* General Styles and Fonts */
+body {
+    font-family: 'Poppins', sans-serif; /* Adjust font as needed */
+    overflow-x: hidden; /* Prevent horizontal scroll due to diagonal background */
+}
+
+/* Color Variables (For easy updates) */
+:root {
+    --primary-red: #da291c; /* A deep, bright red close to the image */
+    --text-dark: #212529;
+    --text-light: #ffffff;
+}
+
+/* Hero Section Styling */
+.hero-section {
+    min-height: 100vh; /* Full viewport height */
+    position: relative;
+    margin-top:  -75px;
+}
+
+/* ---------------------------------------------------- */
+/* 1. Navbar Styling */
+/* ---------------------------------------------------- */
+
+.navbar {
+    background-color: #bf131338  !important; /* Make the navbar part of the hero background */
+}
+
+/* Custom Navigation Links Styling */
+.custom-nav-links .nav-link {
+    color: var(--text-dark); /* Default text color for links */
+    font-weight: 700;
+    margin-left: 20px;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.custom-nav-links .nav-link:hover,
+.custom-nav-links .nav-link.active {
+    color: var(--primary-red);
+}
+
+/* Logo Image (Adjust size as needed) */
+.logo-img {
+    height: 40px; /* Example size */
+}
+
+/* ---------------------------------------------------- */
+/* 2. Hero Content and Diagonal Background */
+/* ---------------------------------------------------- */
+
+.hero-content {
+    /* Set content height relative to screen height after navbar */
+    height: calc(100vh - 100px); /* Adjust 100px for estimated navbar height */
+    align-items: center; /* Vertically align content in the center */
+}
+
+/* --- THE DIAGONAL SPLIT BACKGROUND (CRITICAL) --- */
+
+.hero-content::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50vw; /* Takes up the right half of the screen width */
+    height: 100%;
+    /* Use a 2D transform (skew/rotate) to create the diagonal line */
+    background-color: var(--primary-red);
+    clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%); /* Adjust 10% for the angle of the diagonal line */
+    z-index: -1; /* Place behind content */
+}
+
+/* --- Left Column (Text) --- */
+
+/* কাস্টম CSS */
+        
+        /* লাল রঙ: #E51D27 */
+        :root {
+            --stan-red: #E51D27;
+            --stan-dark: #212529;
+        }
+
+        /* ** ডান পাশের লাল অংশটির জন্য CSS **
+         * clip-path ব্যবহার করে তির্যক আকৃতি তৈরি করা হয়েছে।
+         * polygon(25% 0, 100% 0, 100% 100%, 0% 100%)
+         * এই কোঅর্ডিনেটগুলো লাল ব্যাকগ্রাউন্ডের বাম-উপরের কোণকে ২৫% ডান দিকে সরিয়ে একটি তির্যক রেখা তৈরি করে।
+        */
+
+.red-diagonal-bg {
+            position: absolute;
+            top: 0;
+            right: 0;
+            /* স্ক্রিনের প্রায় ৭২% জুড়ে লাল অংশটি */
+            width: 72%; 
+            height: 100%;
+            background-color: var(--stan-red);
+            z-index: 1; 
+            /* তির্যক আকৃতি তৈরি করতে clip-path ব্যবহার */
+            clip-path: polygon(25% 0, 100% 0, 100% 80%, 60% 80%);
+        }
+
+        .hero-section {
+            min-height: 80vh; 
+            position: relative;
+            padding-bottom: 50px;
+        }
+
+        /* ন
+        ্যাভিগেশন লিঙ্কগুলির রঙ লাল অংশের উপর সাদা করার জন্য */
+        .navbar-nav .nav-link {
+            color: white !important;
+            font-weight: 500;
+            font-size: 1.05rem;
+            margin-left: 15px;
+        }
+
+        /* লোগো স্টাইল */
+        .logo-x-stan {
+            display: flex;
+            align-items: center;
+        }
+        .logo-x-stan .logo-text {
+            line-height: 1;
+        }
+        .logo-x-stan small {
+            font-size: 0.6rem;
+            font-weight: bold;
+            color: var(--stan-red);
+            margin-bottom: -5px;
+        }
+        .logo-x-stan .handyman-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--stan-dark);
+        }
+
+        /* বাম পাশের কন্টেন্ট স্টাইল */
+        .hero-content-left {
+            padding-top: 150px;
+        }
+        .hero-content-left h1 {
+            font-size: 4.5rem;
+            font-weight: 800;
+            color: var(--stan-dark);
+            line-height: 1.1;
+            margin-bottom: 15px;
+        }
+        .hero-content-left .expert-text {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--stan-red);
+        }
+        .hero-content-left p {
+            font-size: 1.1rem;
+            color: #6c757d;
+            margin-bottom: 30px;
+        }
+        
+        /* ডান পাশের ভ্যান ইমেজ পজিশনিং */
+        .van-image-container {
+            /* van-image-container কে লাল ব্যাকগ্রাউন্ডের উপরে রাখার জন্য */
+            z-index: 2; 
+        }
+
+        .van-image {
+            max-width: 100%;
+            height: auto;
+            position: relative;
+            /* ভ্যানটিকে একটু উপরে এবং বামে সরানো হয়েছে যাতে এটি ডিজাইনের সাথে মেলে */
+            margin-top: 260px; 
+            margin-left: 30%; 
+        }
+
+        /* কন্টেন্টকে লাল অংশের উপরে রাখার জন্য */
+        .hero-content-wrapper {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* বাটনের স্টাইল */
+        .btn-custom {
+            background-color: var(--stan-red);
+            border-color: var(--stan-red);
+            color: white;
+            padding: 10px 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+
+        .red-diagonal-bg {
+    /* ... অন্যান্য পজিশনিং CSS ... */
+    clip-path: polygon(25% 0, 100% 0, 100% 75%, 60% 70%);
+}
+
+.hero-text-column {
+    z-index: 1; /* Ensure text is above background */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.expert-label {
+    color: var(--primary-red);
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 5px;
+    margin-bottom: -10px; /* Pull closer to the H1 */
+}
+
+.hero-text-column h1 {
+    font-size: 4rem; /* Large font size */
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--text-dark);
+}
+
+.hero-text-column .subtitle {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #6c757d; /* Slightly muted text */
+}
+
+/* Custom Red Button */
+.btn-red {
+    background-color: var(--primary-red);
+    color: var(--text-light);
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn-red:hover {
+    background-color: #a31d13; /* Darker shade on hover */
+    color: var(--text-light);
+}
+
+/* --- Right Column (Van Image) --- */
+
+.hero-image-column {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    
+}
+
+.van-img {
+    position: absolute; /* Position relative to its column */
+    /* Adjust these values to position the van accurately on the diagonal line */
+    max-width: 1200px; /* Ensure it fits */
+    height: auto;
+    bottom: 50px; /* Push up from the bottom of the column */
+    right: 20px; /* Align to the right */
+    transform: translateX(10%); /* Move a bit out of the container to match the image */
+    z-index: 2; /* Place van above the red background */
+}
+
+/* ---------------------------------------------------- */
+/* 3. Media Queries (Responsiveness) */
+/* ---------------------------------------------------- */
+
+@media (max-width: 992px) { /* Adjusts for tablet/mobile view */
+    .hero-content {
+        min-height: auto;
+        height: auto; /* Allow height to be determined by content */
+        flex-direction: column; /* Stack columns */
+    }
+
+    /* Remove diagonal split on smaller screens and make the whole background white */
+    .hero-content::after {
+        display: none;
+    }
+    
+    /* Give the image column a solid red background for mobile */
+    .hero-image-column {
+        min-height: 800px; /* Give the image space */
+        background-color: var(--primary-red); /* Solid red background */
+        overflow: hidden; /* Hide van overflow */
+        padding-top: 50px;
+    }
+
+    .hero-text-column h1 {
+        font-size: 3rem;
+    }
+
+    .van-img {
+        position: relative; /* Change positioning for mobile */
+        bottom: 0;
+        right: auto;
+        transform: translateX(0); /* Remove transform */
+        max-width: 90%;
+        margin: 0 auto;
+        display: block;
+    }
+}
+
+@media (min-width: 1200px) {
+    /* Larger screens can handle bigger text */
+    .hero-text-column h1 {
+        font-size: 5rem;
+    }
+}
+
+/*About section*/
+
+/* Color Variables (Assuming the same red from the Hero section) */
+:root {
+    --primary-red: #da291c; 
+    --text-dark: #212529;
+    --text-muted: #6c757d;
+    --font-family: 'Poppins', sans-serif; /* Use the font you linked in the Hero section */
+}
+
+/* ---------------------------------------------------- */
+/* General Section Styling */
+/* ---------------------------------------------------- */
+
+.about-section {
+    font-family: var(--font-family);
+    background-color: #ffffff; /* Explicit white background */
+}
+
+.section-title {
+    font-weight: 900;
+    font-size: 2.5rem;
+    color: var(--text-dark);
+    line-height: 1.2;
+}
+
+/* ---------------------------------------------------- */
+/* Image and Custom Frame Styling */
+/* ---------------------------------------------------- */
+
+.image-frame-container {
+    position: relative;
+    max-width: 400px; /* Control the overall size of the image and frame */
+}
+
+.stan-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 2; /* Ensure image is above the frame */
+}
+
+/* The custom red border using a pseudo-element */
+.image-frame-container::after {
+    content: '';
+    position: absolute;
+    top: -50px; /* Move frame up */
+    left: -50px; /* Move frame left */
+    width: calc(100% + 100px); /* Make frame wider than image */
+    height: calc(100% + 50px); /* Make frame taller than image */
+    
+    border: 3px solid var(--primary-red);
+    z-index: 1; /* Place frame below the image */
+    
+    /* Create the asymmetrical shape by removing parts of the border */
+    /* top left corner | top right corner | bottom right corner | bottom left corner */
+    clip-path: polygon(
+        0% 0%, 
+        100% 0%, 
+        100% 100%, 
+        80% 100%,  /* Start of bottom gap */
+        80% 90%,   /* Inner corner of bottom gap */
+        20% 90%,   /* Inner corner of bottom gap */
+        20% 100%,  /* End of bottom gap */
+        0% 100%
+    );
+    
+    /* Correction: The image shows an open bottom right and top left */
+    /* Let's use a simpler approach with box-shadow or direct border styling instead of clip-path for easier control */
+    
+    /* Re-attempting the frame with visible corners and gaps (Easier with multiple pseudo-elements or specific borders) */
+    
+    /* Using only '::after' to cover the complex shape: */
+    /* The image seems to have a thick red line on the left, top, and a partial right line, with a gap in the bottom right. */
+    border: none;
+    outline: 3px solid var(--primary-red); /* Use outline for a thick border */
+    outline-offset: -50px; /* Push the outline inside the calculated space */
+    
+    /* *** BEST APPROACH FOR THE SHAPE SHOWN *** */
+    /* The actual design uses only three sides: Top, Left, and a small part of the Right. */
+    width: calc(100% + 50px);
+    height: calc(100% + 50px);
+    top: -25px;
+    left: -25px;
+    
+    /* Create the open L-shape border using a diagonal cut */
+    background: transparent;
+    border: 3px solid var(--primary-red);
+    border-bottom: 0; /* Remove bottom border entirely */
+    border-right: 0; /* Remove right border entirely */
+    
+    /* Add a small red line on the right side manually */
+    /* We'll use a second pseudo-element for the small right line */
+}
+
+/* Second pseudo-element for the small red line on the right */
+.image-frame-container::before {
+    content: '';
+    position: absolute;
+    top: -25px;
+    right: -3px; /* Align to the right edge of the main frame area */
+    width: 3px;
+    height: 70%; /* Only 70% of the height */
+    background-color: var(--primary-red);
+    z-index: 1;
+}
+
+/* ---------------------------------------------------- */
+/* Text Content Styling */
+/* ---------------------------------------------------- */
+
+.about-label {
+    color: var(--primary-red);
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.about-name {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+
+.about-description {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* Custom Red Button (Similar to Hero section, but for this section) */
+.btn-red-about {
+    background-color: var(--primary-red);
+    color: #ffffff;
+    border: none;
+    padding: 10px 25px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn-red-about:hover {
+    background-color: #a31d13; 
+    color: #ffffff;
+}
+
+/* ---------------------------------------------------- */
+/* Media Queries (Responsiveness) */
+/* ---------------------------------------------------- */
+
+@media (max-width: 992px) { /* Tablet and Mobile */
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .image-frame-container {
+        max-width: 300px; /* Smaller image on mobile */
+    }
+
+    /* Reset pseudo-elements for a simpler look on small screens */
+    .image-frame-container::after,
+    .image-frame-container::before {
+        display: none;
+    }
+    
+    /* Center the text content on mobile */
+    .about-text-content {
+        text-align: center;
+    }
+    .about-text-content .btn-red-about {
+        margin-left: auto;
+        margin-right: auto;
+        display: block; /* Make button full width or center it */
+    }
+}
+
+/*Services*/
+
+/* Color Variables (Reusing the red from previous sections) */
+:root {
+    --primary-red: #da291c; 
+    --text-dark: #212529;
+    --text-muted: #6c757d;
+    --font-family: 'Poppins', sans-serif;
+}
+
+/* ---------------------------------------------------- */
+/* Services Section Layout */
+/* ---------------------------------------------------- */
+
+.services-section {
+    font-family: var(--font-family);
+    background-color: #f8f9fa; /* Slightly off-white background to match the original image's white space */
+}
+
+.section-subtitle {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+/* ---------------------------------------------------- */
+/* Card Styling */
+/* ---------------------------------------------------- */
+
+.service-card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Subtle box shadow to lift the card */
+    transition: transform 0.3s, box-shadow 0.3s;
+    height: 100%; /* Ensure all cards in the grid are the same height */
+    overflow: hidden; /* Keep image border rounded */
+}
+
+.service-card:hover {
+    transform: translateY(-5px); /* Lift card slightly on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+    height: 220px; /* Standardized height for all service images */
+    object-fit: cover; /* Ensures images fill the space without distortion */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.75rem;
+}
+
+.card-text {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+/* ---------------------------------------------------- */
+/* "Learn More" Link Styling */
+/* ---------------------------------------------------- */
+
+.btn-learn-more {
+    color: var(--primary-red);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+.btn-learn-more:hover {
+    color: #a31d13; /* Darker red on hover */
+    text-decoration: underline;
+}
+
+/* ---------------------------------------------------- */
+/* "View All Services" Link Styling */
+/* ---------------------------------------------------- */
+
+.view-all-link {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    text-decoration: none;
+    padding: 5px 15px;
+    border-bottom: 2px solid var(--text-dark); /* Underline style from the image */
+    transition: color 0.2s, border-bottom-color 0.2s;
+}
+
+.view-all-link:hover {
+    color: var(--primary-red);
+    border-bottom-color: var(--primary-red);
+}
+
+
+/*Project Sections*/
+
+/* Color Variables (Reusing the red from previous sections) */
+:root {
+    --primary-red: #da291c; 
+    --text-dark: #212529;
+    --text-muted: #6c757d;
+    --font-family: 'Poppins', sans-serif;
+}
+
+/* ---------------------------------------------------- */
+/* Projects Section Layout */
+/* ---------------------------------------------------- */
+
+.projects-section {
+    font-family: var(--font-family);
+    background-color: #f8f8f8; /* Light gray background to match the image */
+}
+
+.projects-title {
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: var(--text-dark);
+}
+
+/* ---------------------------------------------------- */
+/* Project Image and Caption Styling */
+/* ---------------------------------------------------- */
+
+.project-pair-container {
+    text-align: center;
+    background-color: #ffffff; /* White background for the images */
+    padding: 10px; /* Slight padding if needed, but the original seems edge-to-edge */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Very subtle shadow */
+}
+
+.project-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    /* Ensure all images have a consistent visual presentation */
+    min-height: 250px; 
+    object-fit: cover; 
+}
+
+.project-caption {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+/* ---------------------------------------------------- */
+/* "View All Projects" Button Styling */
+/* ---------------------------------------------------- */
+
+.btn-red-projects {
+    background-color: var(--primary-red);
+    color: #ffffff;
+    border: none;
+    padding: 10px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    text-decoration: none; /* In case Bootstrap reset doesn't apply */
+}
+
+.btn-red-projects:hover {
+    background-color: #a31d13; /* Darker red on hover */
+    color: #ffffff;
+}
+
+/* ---------------------------------------------------- */
+/* Media Queries (Responsiveness) */
+/* ---------------------------------------------------- */
+
+@media (max-width: 992px) { /* Tablet and Mobile */
+    .projects-title {
+        font-size: 2rem;
+    }
+    
+    .project-image {
+        /* Allow images to breathe on mobile */
+        min-height: auto;
+    }
+}
+
+/*Contact seciton*/
+
+/* Color Variables (Reusing the red from previous sections) */
+:root {
+    --primary-red: #da291c; 
+    --text-light: #ffffff;
+    --font-family: 'Poppins', sans-serif;
+}
+
+/* ---------------------------------------------------- */
+/* Section Layout and Colors */
+/* ---------------------------------------------------- */
+
+.estimate-section {
+    font-family: var(--font-family);
+}
+
+.form-column {
+    background-color: var(--primary-red);
+    color: var(--text-light);
+    /* Set a minimum height for smaller screens where the columns stack */
+    min-height: 600px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-title {
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: var(--text-light);
+}
+
+/* ---------------------------------------------------- */
+/* Custom Form Input Styling */
+/* ---------------------------------------------------- */
+
+.custom-input {
+    background-color: transparent; /* Transparent background */
+    border: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.7); /* White bottom border */
+    border-radius: 0; /* Square corners */
+    color: var(--text-light) !important; /* White text color */
+    padding: 10px 0;
+    transition: border-bottom-color 0.3s;
+}
+
+/* Style for placeholder text in inputs/textarea */
+.custom-input::placeholder {
+    color: rgba(255, 255, 255, 0.7) !important;
+    opacity: 1; /* Override default browser opacity */
+}
+
+.custom-input:focus {
+    background-color: transparent;
+    box-shadow: none; /* Remove default Bootstrap focus glow */
+    border-bottom-color: var(--text-light); /* Solid white line on focus */
+}
+
+/* ---------------------------------------------------- */
+/* Submit Button Styling */
+/* ---------------------------------------------------- */
+
+.btn-submit-estimate {
+    background-color: var(--text-light); /* White background */
+    color: var(--primary-red); /* Red text */
+    border: none;
+    padding: 12px 35px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-submit-estimate:hover {
+    background-color: #f0f0f0; /* Slightly off-white on hover */
+    color: var(--primary-red);
+}
+
+/* ---------------------------------------------------- */
+/* Image Column Styling */
+/* ---------------------------------------------------- */
+
+.image-column {
+    /* Set height only for desktop, allowing it to take space next to the form */
+    min-height: 800px; 
+    background-image: url('image/imag1.png'); /* Replace with your actual image path */
+    background-size: cover;
+    background-position: center center;
+}
+
+
+/* ---------------------------------------------------- */
+/* Media Queries (Responsiveness) */
+/* ---------------------------------------------------- */
+
+@media (max-width: 992px) { /* Tablet and Mobile */
+    
+    .form-column {
+        /* Reduce padding and align text for better mobile viewing */
+        padding: 3rem 1.5rem;
+        min-height: auto;
+    }
+
+    .form-title {
+        font-size: 2rem;
+    }
+    
+    .image-column {
+        /* Hide the image column on mobile to save space */
+        display: none; 
+    }
+    
+    /* If you MUST show the image on mobile, uncomment and adjust: */
+    /*
+    .image-column {
+        display: block;
+        min-height: 300px; 
+    }
+    */
+}
+
+
+/*Footer seciton*/
+
+/* Color Variables (Reusing the red from previous sections) */
+:root {
+    --primary-red: #da291c; 
+    --text-dark: #212529;
+    --text-muted: #6c757d;
+    --footer-bg-light: #f5f5f5; /* Light gray background for the main area */
+    --footer-bg-dark: #ebebeb; /* Slightly darker gray for the copyright bar */
+    --font-family: 'Poppins', sans-serif;
+}
+
+footer {
+    font-family: var(--font-family);
+    background-color: var(--footer-bg-light);
+}
+
+/* ---------------------------------------------------- */
+/* 1. Top Bar Styling */
+/* ---------------------------------------------------- */
+
+.footer-top-bar {
+    height: 10px; /* Thin red bar height */
+    background-color: var(--primary-red);
+}
+
+/* ---------------------------------------------------- */
+/* 2. Main Content Area Styling */
+/* ---------------------------------------------------- */
+
+.footer-main-content {
+    background-color: var(--footer-bg-light);
+}
+
+.footer-logo {
+    max-height: 50px; /* Adjust size to match the image */
+    width: auto;
+}
+
+/* Contact Info */
+.contact-item {
+    color: var(--text-dark);
+    font-size: 0.95rem;
+    margin-bottom: 0;
+    font-weight: 500;
+}
+
+.contact-icon {
+    color: var(--primary-red);
+    margin-right: 10px;
+}
+
+.contact-link {
+    color: var(--text-dark);
+    text-decoration: none;
+}
+
+.contact-link:hover {
+    color: var(--primary-red);
+}
+
+/* Footer Navigation Links */
+.footer-nav-row {
+    border-top: 1px solid #ccc; /* Thin gray line separator above links */
+}
+
+.footer-nav-link {
+    color: var(--text-dark);
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+    margin: 0 5px;
+    padding: 0 5px;
+    transition: color 0.2s;
+}
+
+.footer-nav-link:hover,
+.footer-nav-link.active {
+    color: var(--primary-red);
+}
+
+.separator {
+    color: #ccc;
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+/* ---------------------------------------------------- */
+/* 3. Copyright Bar Styling */
+/* ---------------------------------------------------- */
+
+.footer-copyright {
+    background-color: var(--footer-bg-dark);
+    border-top: 1px solid #dcdcdc;
+}
+
+.copyright-text {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+
+/* ---------------------------------------------------- */
+/* Media Queries (Responsiveness) */
+/* ---------------------------------------------------- */
+
+@media (max-width: 768px) {
+    .contact-info-row {
+        text-align: center;
+        /* Center all contact items on mobile */
+    }
+    .footer-nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .footer-nav-link, .separator {
+        margin: 5px 3px;
+    }
+    .separator {
+        /* Hide separators on mobile wrap */
+        display: none; 
+    }
+}
